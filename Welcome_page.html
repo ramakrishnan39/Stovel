@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stovel - Login / Sign up </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="CSS/Home_page.css" type="text/css">
+        <link rel="stylesheet" href="Common/common.css" type="text/css">                
+        <link rel="icon" href="Images/app_icon.png" type="image/x-icon" />
+               
+        <script type="text/javascript" src="Js/jquery_file.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="Js/functions.js" ></script>
+        <script>
+            $(function ()
+            {
+                $("#head1").load("Common/Headpart.html");
+                $("#foot1").load("Common/Footpart.html");
+            }
+            );
+        </script>
+        
+    </head>
+    <body>
+        <?php session_start(); ?>
+        <div id="head1"> </div>
+        <div id="gen_screen">
+                Welcome to Stovel! <br/>
+                Here you can read your favorite Novels and Stories.<br/> <br/>
+        </div>
+        
+        <div id="Welcome_screen">
+            
+            <div id="login_part">
+                &nbsp;Login to explore more!!<br />
+                <br />
+                <form action="PHP/login.php" id="form_login" name="form_log" method="POST">
+
+                    Enter your username &nbsp;&nbsp;&nbsp; : <input type="text" name="txt_uname" id="txt_user" accesskey="s" required="" /><br/>
+                    Enter your password &nbsp;&nbsp;&nbsp;&nbsp; : <input type="password" name="pwd_login" id="p_pass" accesskey="p" required="" />
+                    <br/>
+                    <input type="Submit" name="btn_login" id="button_login" value="Login" />
+                    <input type="button" id="btn_sign_clr" value="Clear" onclick="document.getElementById('form_login').reset()">
+                    
+                </form>
+                <div id="signup_btn">
+                    <br/>If you have not registered yet, please sign in to login ! <br/>
+                    <input type="button" id="btn_signin_0" value="Sign In" name="btn_signin_0" onclick="enable_signin()"/>
+                    
+                </div>
+            </div>
+
+            <div id="signup_part" style="visibility: hidden">
+                <form action="PHP/signin.php" id="frm_signup" name="frm_signin" method="POST">
+                    Enter your name &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="txt_user_name" id="txt_username" value="" required=""/><br/>
+                    Enter your DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="date" name="dt_dob" id="dt_user_dob" required=""/><br/>
+                    Enter your address &nbsp;&nbsp;: <textarea name="user_address" rows="3" cols="20" required=""></textarea> <br/><br/>
+                    
+                    Enter your user name &nbsp;: <input type="text" name="txt_u_name" id="txt_u_name" value="" required=""/><br/>
+                    Enter your password &nbsp;&nbsp;&nbsp;: <input type="password" name="pwd_usr_passwd" id="pwd_usr_passwd" value="" required=""/><br/>
+                    <input type="submit" id="btn_signin_1" value="Sign In" name="btn_signin_1" />
+                    <input type="button" id="btn_sign_clr" value="Clear" onclick="document.getElementById('frm_signup').reset()">
+                </form>
+            </div>
+            
+        </div>
+        <div id="foot1"> </div>
+    </body>
+    
+</html>
